@@ -10,7 +10,8 @@ var config={
     },
     mongodb:{
         host:'127.0.0.1',
-        port:27017
+        port:27017,
+        database:'notes'
     },
     app:{
         appKey:'CD1ACC391E4D',
