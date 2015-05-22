@@ -12,6 +12,7 @@ var app = express();
 app.configure(function () {
     app.use( express.cookieParser() );
     app.set("port", config.server.port);
+    app.use(express.favicon(__dirname + '/public/images/favicon.ico'));
     app.use(express.session({
         secret: "ravenHaha",
         store: new RedisStore({
@@ -27,9 +28,8 @@ app.configure(function () {
 
 
 
-app.get('/', controller.CheckAuth, function (req, res, next) {
-    res.send(200, 'index');
-});
+app.get('/', controller.CheckAuth, controller.Index);
+app.get('/index',controller.CheckAuth, controller.Index);
 app.get('/login', controller.Login);
 app.get('/authorize_callback', controller.AuthCallback);
 
