@@ -81,11 +81,17 @@ function AuthCallback(req,res,next){
 }
 
 function Index(req,res,next){
-    res.json({
-        token:req.session.token,
-        user:req.session.user,
-        project:req.session.project
-    })
+    var user = req.session.user;
+    res.render('index.jade',{
+        title:'aaaa',
+        uid:user.id,
+        uname:user.name
+    });
+    //res.json({
+    //    token:req.session.token,
+    //    user:req.session.user,
+    //    project:req.session.project
+    //})
 }
 
 exports.Index = Index;
