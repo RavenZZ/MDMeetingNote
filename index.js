@@ -4,10 +4,17 @@ var controller = require('./controller');
 var express = require('express');
 var RedisStore = require('connect-redis')(express);
 var redis = require('redis');
+
 var redisConfig = config.redis;
 var redisClient = redis.createClient(redisConfig.port,redisConfig.host);
 
 var app = express();
+var server = require('http').createServer(app);
+var io = require('socket.io')(server,{
+    path:'/socket'
+});
+var Connection = require('./lib/connection');
+var connection = new Connection(io);
 
 app.configure(function () {
     app.use( express.cookieParser() );
@@ -25,7 +32,7 @@ app.configure(function () {
     }));
 });
 
-
+io.on('connection', connection.OnConnection);
 
 
 app.get('/', controller.CheckAuth, controller.Index);
@@ -33,27 +40,7 @@ app.get('/index',controller.CheckAuth, controller.Index);
 app.get('/login', controller.Login);
 app.get('/authorize_callback', controller.AuthCallback);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-app.listen(app.get('port'));
+server.listen(app.get('port'));
 console.log('server is running at port '+app.get('port'));
 
 
