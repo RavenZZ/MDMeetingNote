@@ -2,13 +2,24 @@ doctype html
 html
     head
         title=title
+        link(href='/css/style.css?v=#{v}',type='text/css',rel="stylesheet")
+        link(href='/css/basic.css?v=#{v}',type='text/css',rel="stylesheet")
+        script(src='/script/jquery-2.1.4.min.js',,type='text/javascript')
+        script(src='/script/index.js?v=#{v}',,type='text/javascript')
         script(src='/socket/socket.io.js',type='text/javascript')
+        script(src='/script/fetch.js?v=#{v}',,type='text/javascript')
+        script(src='/script/socket.js?v=#{v}',,type='text/javascript')
         script(type='text/javascript').
-            var socket = io.connect(location.origin,{
-                path:'/socket'
-            });
-            socket.on('msg', function (data) {
-
+            var G = {};
+            G.socket = null;
+            $(function () {
+                G.socket = new Socket();
             });
     body
-        span #{uid}
+        div#container
+            div#TopBar
+            div#Core
+                fieldset#LeftMenu.rh.Absolute
+                fieldset#LeftEditor.rh.Absolute
+                div#Vtbar.handler.handler_vertical.rh.Absolute
+                fieldset#RightEditor.rh.Absolute

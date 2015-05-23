@@ -98,6 +98,7 @@ function AuthCallback(req, res, next) {
 function Index(req, res, next) {
     var user = req.session.user;
     res.render('index.jade', {
+        v: '11',
         title: 'aaaa',
         uid: user.id,
         uname: user.name

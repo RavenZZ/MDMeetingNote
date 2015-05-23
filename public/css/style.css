@@ -1,0 +1,35 @@
+#container {
+
+}
+
+#TopBar {
+    height: 48px;
+}
+
+#Core {
+    width: 100%;
+    height: 100%;
+}
+
+#LeftMenu {
+    width: 180px;
+    background: #00d6b2;
+}
+
+#LeftEditor {
+    left: 180px;
+    width: 45%;
+    background: blueviolet;
+}
+
+#Vtbar {
+    cursor: col-resize;
+    width: 14px;
+    background: red;
+}
+
+#RightEditor {
+    background: deeppink;
+    right: 0;
+}
+
