@@ -17,6 +17,7 @@ var connection = new Connection(io);
 
 app.configure(function () {
     app.use(express.cookieParser());
+    app.use(express.bodyParser());
     app.set("port", config.server.port);
     app.use(express.favicon(__dirname + '/public/images/favicon.ico'));
     app.use(express.session({

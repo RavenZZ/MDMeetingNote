@@ -81,8 +81,21 @@ function GetJoinedTasks(token, filterType, keywords, callback) {
             var result = null;
             try {
                 result = JSON.parse(body);
-                callback(null, result);
+                var tasks = result.tasks.map(function (obj) {
+                    var chargeUser = {
+                        id: obj.user.id,
+                        name: obj.user.id,
+                        avatar: obj.user.avatar
+                    };
+                    return {
+                        id: obj.guid,
+                        name: obj.title,
+                        user: chargeUser
+                    }
+                });
+                callback(null, tasks);
             } catch (e) {
+                console.log(e.message)
                 callback(new Error('Get joined tasks Error'), body);
             }
 
