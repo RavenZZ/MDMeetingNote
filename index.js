@@ -39,6 +39,10 @@ app.get('/index', controller.CheckAuth, controller.Index);
 app.get('/login', controller.Login);
 app.get('/authorize_callback', controller.AuthCallback);
 
+app.post('/tasks', controller.CheckAuthWithoutRedirect, controller.GetJoinedTasks);
+app.post('/calendars', controller.CheckAuthWithoutRedirect, controller.GetJoinedCalendar);
+
+
 server.listen(app.get('port'));
 console.log('server is running at port ' + app.get('port'));
 

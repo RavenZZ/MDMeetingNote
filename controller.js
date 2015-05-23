@@ -4,6 +4,10 @@ var mdapi = require('./mdapi');
 var ApiLoginUrl = mdapi.ApiLoginUrl;
 var async = require('async');
 
+
+/*
+ * if there is no session redirect to login
+ * */
 function CheckAuth(req, res, next) {
     if (!req.session || !req.session.user || !req.session.token) {
         console.warn('There is No Session'.cyan);
@@ -18,6 +22,18 @@ function CheckAuth(req, res, next) {
     }
 }
 
+/*
+ * check session without redirect
+ * */
+function CheckAuthWithoutRedirect(req, res, next) {
+    if (!req.session || !req.session.user || !req.session.token) {
+        res.json({
+            msg: 'no session state'
+        });
+    } else {
+        next();
+    }
+}
 
 function Login(req, res, next) {
     if (!req.session || !req.session.token) {
@@ -93,9 +109,47 @@ function Index(req, res, next) {
     //})
 }
 
+
+/*
+ *   fetching http data
+ * */
+
+
+function GetJoinedTasks(req, res) {
+    var reqBody = req.body;
+    var filterType = reqBody.fType;
+    var keywords = reqBody.keywords;
+    var token = req.session.token;
+    mdapi.GetJoinedTasks(token, filterType, keywords, function (getJoinedTaskError, tasks) {
+        if (getJoinedTaskError) {
+            res.json({err: tasks});
+        } else {
+            res.json(tasks);
+        }
+    });
+}
+
+function GetJoinedCalendar(req, res) {
+    var reqBody = req.body;
+    var date = reqBody.date;
+    var token = req.session.token;
+
+    mdapi.GetJoinedCalendar(token, date, function (getCalendarError, calendars) {
+        if (getCalendarError) {
+            res.json({err: calendars});
+        } else {
+            res.json(calendars);
+        }
+    });
+}
+
+
 exports.Index = Index;
 exports.CheckAuth = CheckAuth;
+exports.CheckAuthWithoutRedirect = CheckAuthWithoutRedirect;
 exports.Login = Login;
 exports.AuthCallback = AuthCallback;
 
+exports.GetJoinedTasks = GetJoinedTasks;
+exports.GetJoinedCalendar = GetJoinedCalendar;
 
