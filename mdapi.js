@@ -62,6 +62,13 @@ function GetCurrentUserInfo (token, callback){
     });
 }
 
+function GetJoinedTasks(toekn, callback) {
+
+}
+
+
+
+
 exports.GetCurrentUserInfo = GetCurrentUserInfo;
 exports.ApiLoginUrl = apiLoginUrl;
 exports.GetToken = GetToken;
