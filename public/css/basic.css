@@ -1,3 +1,6 @@
+body{
+font-family:  "Microsoft Yahei UI Light","Microsoft Yahei",Verdana,Simsun,"Segoe UI Web Light","Segoe UI Web Regular","Segoe UI","Segoe UI Symbol",HelveticaNeue-Light,"Helvetica Neue",Arial,sans-serif
+}
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,fieldset
 {
     margin: 0;

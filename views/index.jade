@@ -4,11 +4,13 @@ html
         title=title
         link(href='/css/style.css?v=#{v}',type='text/css',rel="stylesheet")
         link(href='/css/basic.css?v=#{v}',type='text/css',rel="stylesheet")
+        link(href='/css/editor.css?v=#{v}',type='text/css',rel="stylesheet")
         script(src='/script/jquery-2.1.4.min.js',,type='text/javascript')
         script(src='/script/index.js?v=#{v}',,type='text/javascript')
         script(src='/socket/socket.io.js',type='text/javascript')
         script(src='/script/fetch.js?v=#{v}',,type='text/javascript')
         script(src='/script/socket.js?v=#{v}',,type='text/javascript')
+        script(src='/script/editor.js?v=#{v}',,type='text/javascript')
         script(type='text/javascript').
             var G = {};
             G.socket = null;
@@ -18,8 +20,25 @@ html
     body
         div#container
             div#TopBar
+                div#logo
+                    p 返回明道
+                div#TopMenu
+                    div#createBtn
+                        span 创建
             div#Core
-                fieldset#LeftMenu.rh.Absolute
+                div#LeftMenu.rh.Absolute
+                    ul#Menus
+                        li
+                            div.menuItem 我的草稿
+                        li
+                            div.menuItem 我的会议
                 fieldset#LeftEditor.rh.Absolute
-                div#Vtbar.handler.handler_vertical.rh.Absolute
+                    div#SharedTop
+
+                    div#SharedBox
+                        div#ShareEditor
                 fieldset#RightEditor.rh.Absolute
+                    div#TaskContainer
+                        h1 Tasks
+                    div#MyDraftBox
+                        div#DraftEditor

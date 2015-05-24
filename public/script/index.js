@@ -22,21 +22,35 @@ $(function () {
 
         $vtBar.css('left', $('#LeftEditor').position().left + leftEditorWidth + 4);
     }();
+    
 
-    var dragVerticalBar = function () {
-        $('#Vtbar').on('mousedown', function () {
-            console.log('mouse down');
-        }).on('mouseup', function () {
-            console.log('mouse up');
-        }).on('mousemove', function () {
-            console.log('mouse move')
-        });
+    var calcSharedEditorHeight = function () {
+        var windowHeight = $(this).height();
+        var sharedTopHeight = $('#SharedTop').height();
+    }();
 
-
+    $('#ShareEditor').Editor({EditorTitle:'共享笔记'});
+    var calcSharedBoxHeight = function () {
+        var windowHeight = $(this).height();
+        var sharedTopHeight = $('#SharedTop').height();
+        $('#SharedBox').height(windowHeight-sharedTopHeight-TopBarHeight);
+        $('#SharedBox .md_editor_container').height(windowHeight-sharedTopHeight-TopBarHeight);
+    }();
+    $('#DraftEditor').Editor({EditorTitle:'我的笔记'});
+    var calMyDraftBoxHeight = function () {
+        var windowHeight = $(this).height();
+        var tasksHeight =$('#TaskContainer').height();
+        $('#MyDraftBox').height(windowHeight-tasksHeight-TopBarHeight);
+        $('#MyDraftBox .md_editor_container').height(windowHeight-tasksHeight-TopBarHeight);
     }();
 
 
     $(window).resize(function () {
         resizeRestHeightDivs();
     });
+    $('#logo').on('click', function () {
+       window.location= 'http://mingdao.com';
+    });
+
+
 });

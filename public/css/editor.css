@@ -1,0 +1,408 @@
+
+.md_editor_container {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    display: block;
+    margin: 0;
+    padding: 0;
+    min-width: 450px;
+}
+
+.md_editor_container .md_editor_toolbar {
+    background-color: #f0f0ee;
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+    padding: 2px 0;
+    text-align: left;
+    width: 100%
+}
+
+
+.md_editor_container .md_editor_iframe {
+    border: 0;
+    margin: 0;
+    overflow-x: hidden;
+    padding: 0;
+    width: 100%;
+    height: 100%
+}
+
+.md_editor_container_fullscreen .md_editor_toolbar,.md_editor_container_moderatescreen .md_editor_toolbar {
+    padding-left: 25px
+}
+
+.md_editor_container_fullscreen .md_editor_content,.md_editor_container_moderatescreen .md_editor_content {
+    display: block;
+    min-height: 130px;
+    height: 100%;
+    padding: 0 15px
+}
+
+.md_editor_container .md_editor_toolbar .toolbar {
+    border: 1px solid #f0f0ee;
+    cursor: pointer;
+    display: block;
+    float: left;
+    line-height: 18px;
+    margin: 1px;
+    overflow: hidden;
+    padding: 1px 2px;
+    color: #7d7e80;
+    font-size: 12px
+}
+
+.md_editor_container .md_editor_toolbar .toolbar:hover {
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    cursor: pointer;
+    display: block;
+    float: left;
+    line-height: 18px;
+    margin: 1px;
+    overflow: hidden;
+    padding: 1px 2px;
+    color: #7d7e80;
+    font-size: 12px
+}
+
+.md_editor_container .md_editor_toolbar .toolbar .moreOptions {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAHCAYAAAArkDztAAAAQklEQVR42mNgwAXq6+vn1NXVOcL4IHZDQ8NcBiARBsRvgQrMamtrTUFsoGQ4TFUyUOAlCAMVpKAYCZQsBAoWMZANADXWH/e+NBrMAAAAAElFTkSuQmCC) 0 0/6px 7px no-repeat;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 6px 0 0 4px;
+    height: 7px;
+    overflow: hidden;
+    width: 6px;
+    float: right
+}
+
+.md_editor_container .md_editor_toolbar .separator {
+    background-color: #dadee1;
+    height: 22px;
+    width: 1px;
+    float: left;
+    margin: 0 10px
+}
+
+.md_editor_container .md_editor_toolbar .color {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAASCAYAAABIB77kAAAA+klEQVQ4y2P4//8/Az0xw6iF+HBdXV10Q0PDf2IwQQuBiiZAFffhkFcB4le1tbW6hBxG0EKgAjYgfg218HloaCgzFvnTQB9mExMSxFgYAsSfgHgTSDHQYE80+S4g3sjAwMBILQu3AfEioEXeUF8uRYo3dyD/CRCLEBvXeC2srq6WBir4A8QeaWlprED6JRB/LSsr44VqvgjEeaQkLrwWAn1QjSOlJSD58DFVfAiKE6DkbSCeBhMDpkJTqIV70OJwA8VxCJSwA0kCLbFFE78KxH+BWAY5lQJxFtkWAgUdsGXUBgjAJg7Oh0CsQ3EqJaGkiaVaSTNaeA8ZCwGy1YVFpu5mkwAAAABJRU5ErkJggg==) 0 0/28px 18px no-repeat;
+    height: 18px;
+    overflow: hidden;
+    position: relative;
+    width: 28px
+}
+
+.md_editor_container .md_editor_toolbar .bold {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAe0lEQVR42mNgGAVkgYaGhv/ouL6+/g+QXp2bm8tOlmFpaWmsdXV13kD2DxAfyE4nyyAk/mmoQclkuwjorRgg/gLkryLba0j4B9CwHUAsR5ZBQI1MtbW1xkD2W6jYHkrDaCtU7Ce5LmIBYhcg+zPJLsKTjvaQHEajgPoAAHPwiNNpbugHAAAAAElFTkSuQmCC) 0 0/18px 18px no-repeat;
+    height: 18px;
+    overflow: hidden;
+    width: 18px
+}
+
+.md_editor_container .md_editor_toolbar .italics {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAW0lEQVR42mNgGAUUg4aGhv/ImGyD6uvrVaCG3KbURXlQgyZSZBDQRdtABtXV1XmSbUhhYSEn0KBvIAxik20QyBUg14BcRWn4TISGTx6lBt2Gukhl4NPPKKA+AAAE5kJzNtQZXQAAAABJRU5ErkJggg==) 0 0/18px 18px no-repeat;
+    height: 18px;
+    overflow: hidden;
+    width: 18px
+}
+
+.md_editor_container .md_editor_toolbar .underline {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAVElEQVR42mNgGAVkgYaGhv/IGJcYSYYREhs1iDoGPQVpqqmpUQbxQTSIX19f/45UgyZCXXAHiDuhNMigSSQZBNTABtIEcgHMJVA+28CnbGx4BGV0AI56h7ANXBqMAAAAAElFTkSuQmCC) 0 0/18px 18px no-repeat;
+    height: 18px;
+    overflow: hidden;
+    width: 18px
+}
+
+.md_editor_container .md_editor_toolbar .increaseIndent {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAANklEQVR42mNgGAUkgYaGhv+kYLq4aGp9fT0Lsa4k5LXdFRUVgtQKo42DxkXUCaNhnI5GAVYAAKpCixWiYKm6AAAAAElFTkSuQmCC) 0 0/18px 18px no-repeat;
+    height: 18px;
+    overflow: hidden;
+    width: 18px
+}
+
+.md_editor_container .md_editor_toolbar .reduceIndentation {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAQElEQVR42mNgGAUkgYaGhv+k4IF1EbK6+vp6FqDYVIosq6ioEAQashuv14hxEZC9kSphRDUXUS2Mhmg6GgVYAQDLWosV8mzfkwAAAABJRU5ErkJggg==) 0 0/18px 18px no-repeat;
+    height: 18px;
+    overflow: hidden;
+    width: 18px
+}
+
+.md_editor_container .md_editor_toolbar .alignment {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAH0lEQVR42mNgGAUkgYaGhv+k4oF30WgYjYbRKCALAACpf45IWoKkygAAAABJRU5ErkJggg==) 0 0/18px 18px no-repeat;
+    height: 18px;
+    overflow: hidden;
+    width: 18px
+}
+
+.md_editor_container .md_editor_toolbar .numberLists {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAKklEQVR42mNgGAUkgYaGhv8gTDXD0A3GhYk2aDSMBnv4DN4wGnzhNOAAAP+BXFzh+j6aAAAAAElFTkSuQmCC) 0 0/18px 18px no-repeat;
+    height: 18px;
+    overflow: hidden;
+    width: 18px
+}
+
+.md_editor_container .md_editor_toolbar .bulleted {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAI0lEQVR42mNgGAUkgYaGhv8gTHWDYHxceDSMRsNohIXRoAAAgjJZ3e3dztwAAAAASUVORK5CYII=) 0 0/18px 18px no-repeat;
+    height: 18px;
+    overflow: hidden;
+    width: 18px
+}
+
+.md_editor_container .md_editor_toolbar .to_do {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAA6ElEQVR42mNgGDbg////zCBMDUOWQDGmYXV1dZ4NDQ3PgPg/LtzU1PTs4cOHR5YsWfL/7du3/7EaBjKEkEvev3+/Ztq0aWBDV65cCTJoGhAzohv0n1hDFi5c+P/Tp09zMQzBZxA2Q378+DELqyHIBtXW1poD2TvLy8v5QfyXL1+WIBty4sSJ/zgNQTaovr5+HYgNpE8AsQqQfRnZJfiCAMUgIM0FxHuhMfUbRDc2Nu4DhkkayCVEGwR1FQ+Q/xnqsjcgw4mJFKwKgAb4AfEToLgTsbFLVDpCsuARXgXEpGyQISB1DCMHAAAa6AbGHpT1kgAAAABJRU5ErkJggg==) 0 0/18px 18px no-repeat;
+    height: 18px;
+    overflow: hidden;
+    width: 18px
+}
+
+.md_editor_container .md_editor_toolbar .horizontalline {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAHElEQVR42mNgGAWjYLCBhoaG/5Rg6hs0CkYqAAAu/E/hY39MZgAAAABJRU5ErkJggg==) 0 0/18px 18px no-repeat;
+    height: 18px;
+    overflow: hidden;
+    width: 18px
+}
+
+.md_editor_container .md_editor_toolbar .clearremoveformat {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAn0lEQVR42mNgGNmgrq6uHgg+AfGV2tpaXbIMaWhoaAcacAmI5YA4Ach/TrJhMEMqKytFkVwXDRR/AcQ6ZBsCA0DxC0D5s5QaEgOU/wdyFdmGgLwFlPsDVPMfyC4mFDsEDQFZhtc10CiWo8gQqEFXgAojKDIEBIDpwxio6RVQsz8sYEk2BMkwc6Dmd9Ao/keWIUheNALic1BDcOIRUkIAAIttohAs2O/CAAAAAElFTkSuQmCC) 0 0/18px 18px no-repeat;
+    height: 18px;
+    overflow: hidden;
+    width: 18px
+}
+
+.md_editor_container .md_editor_toolbar .createLink {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAyklEQVR42u2TMQrCMBSGa6fS3ROYxRO4ex5dxUAScyS9gki7OwSXrl106A3i/8ObJEMfuGng44XC+8j/klY556/w6yJr7TLGeAYTuAGjFonkDrjaEMIetVeJsBZsQrNFrfkNtQGTSuScW6Mpee83qANlkJ4Yc5aIJ6EErND0BCPYgiNjMm5BVJxJBx4ieQkJXEsSUhwsZyJxRpEYiVnPun65Yq4aDBInUaJ6R/JOWu5FdmAc7rWiDuxAw9v5GKxKZEAvJ7tQ8v/7qzcKcXfREZywMwAAAABJRU5ErkJggg==) 0 0/18px 18px no-repeat;
+    height: 18px;
+    overflow: hidden;
+    width: 18px
+}
+
+.md_editor_container .md_editor_toolbar .fullScreen {
+    height: 18px;
+    width: 18px;
+    line-height: 20px;
+    display: block;
+    text-align: center
+}
+
+.md_editor_container .options ul,li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0
+}
+
+.md_editor_container .options li {
+    line-height: 25px;
+    padding: 0 12px
+}
+
+.md_editor_container .options li:hover {
+    color:#4a5055;
+    background-color: #d6d9dc;
+    cursor: pointer;
+    border-radius: 9px
+}
+
+.md_editor_container .options {
+    position: absolute;
+    font-size: 13px;
+    color: #686f75;
+    background-color: rgba(246,246,246,.95);
+    border-color: #d1d6da;
+    margin-top: 27px;
+    richness: 75;
+    border-radius: 9px;
+    padding: 5px;
+    z-index: 99
+}
+
+.md_editor_container .options .alignmentLeft {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAH0lEQVR42mNgGAUkgYaGhv+k4oF30WgYjYbRKCALAACpf45IWoKkygAAAABJRU5ErkJggg==) scroll center no-repeat;
+    height: 25px;
+    overflow: hidden;
+    width: 10px
+}
+
+.md_editor_container .options .alignmentCenter {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAH0lEQVR42mNgGAUkg4aGhv+k4MHlqtEwGg2jUUA0AABsqovJEJUCGAAAAABJRU5ErkJggg==) scroll center no-repeat;
+    height: 25px;
+    overflow: hidden;
+    width: 10px
+}
+
+.md_editor_container .options .alignmentRight {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAI0lEQVR42mNgGAUkg4aGhv+k4MHnusEVRoMzBkd6OhoFYAAAa9WETBC7B6UAAAAASUVORK5CYII=) scroll center no-repeat;
+    height: 25px;
+    overflow: hidden;
+    width: 10px
+}
+
+.md_editor_container .options .fontColor {
+    border-radius: 2px;
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+    display: inline-block;
+    padding: 0;
+    margin: 0
+}
+
+.mdEditContainerAlert {
+    height: 30px;
+    line-height: 30px;
+    text-align: right;
+    background-color: #f3f19c;
+    display: none;
+    color: #959600
+}
+
+.md_editor_container_fullscreen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    top: 0;
+    left: 0
+}
+
+.md_editor_container_moderatescreen {
+    position: fixed;
+    height: 100%;
+    z-index: 9999;
+    left: 20%;
+    right: 20%;
+    top: 0
+}
+
+.mdEditContainerCenter {
+    position: fixed;
+    width: 50%;
+    height: 100%;
+    z-index: 9999;
+    top: 0;
+    left: 0
+}
+
+.md_editor_container .changeEditorSize {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    top: 14px;
+    right: 50px;
+    position: absolute;
+    line-height: 16px;
+    background-image: url(/images/maximize.png);
+    background-size: 20px
+}
+
+.md_editor_container .fullScreenMenu {
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #EFEFEF
+}
+
+.md_editor_container .operationContent {
+    width: 100%;
+    display: block;
+    height: 30px;
+    line-height: 50px;
+    padding: 10px 0;
+    border-bottom: 1px solid #EFEFEF
+}
+
+.md_editor_container .operationContent .alertTitleName {
+    float: right;
+    color: #333;
+    line-height: 30px;
+    height: 30px;
+    display: inline-block;
+    margin-right: 25px;
+    text-overflow: ellipsis;
+    width: 50%;
+    overflow: hidden;
+    white-space: nowrap
+}
+
+.md_editor_container .operationContent .editorTaskNamePrompt {
+    float: right;
+    color: #7d7e80;
+    line-height: 30px;
+    height: 30px;
+    display: inline-block
+}
+
+.md_editor_container .md_editor_title {
+    display: block;
+    padding-left: 21px
+}
+
+.md_editor_container .md_editor_title .save {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    width: 50px;
+    border: 1px solid #06c!important;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 5px;
+    float: left;
+    color: #06c;
+    border-radius: 4px
+}
+
+.md_editor_container .md_editor_title .cancel {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    width: 50px;
+    border: 1px solid #EFEFEF;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 10px;
+    float: left;
+    border-radius: 4px
+}
+
+.md_editor_container .closeFullScreen {
+    font-size: 20px;
+    color: #C6C6C6;
+    height: 20px;
+    top: 14px;
+    right: 18px;
+    width: 20px;
+    text-align: center;
+    position: absolute;
+    line-height: 16px;
+    background-size: 20px;
+    text-decoration: none
+}
+
+.md_editor_container .closeFullScreen:hover {
+    color: #333
+}
+
+.md_editor_lockscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1920px;
+    height: 954px;
+    display: block;
+    opacity: .3;
+    z-index: 9998;
+    background-color: #000
+}
+
+.md_editor_container .fullScreenMenu .titleBarIco {
+    background-color: #fff;
+    width: 3px;
+    height: 16px;
+    display: inline-block;
+    margin: 16px 7px 0 0;
+    float: left
+}
+
+.md_editor_container .fullScreenMenu .titleBarWord {
+    display: block;
+    float: left;
+    font-size: 14px!important
+}
