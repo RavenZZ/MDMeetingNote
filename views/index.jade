@@ -5,12 +5,14 @@ html
         link(href='/css/style.css?v=#{v}',type='text/css',rel="stylesheet")
         link(href='/css/basic.css?v=#{v}',type='text/css',rel="stylesheet")
         link(href='/css/editor.css?v=#{v}',type='text/css',rel="stylesheet")
-        script(src='/script/jquery-2.1.4.min.js',,type='text/javascript')
-        script(src='/script/index.js?v=#{v}',,type='text/javascript')
+        script(src='/script/jquery-1.11.3.min.js',type='text/javascript')
+        script(src='/script/index.js?v=#{v}',type='text/javascript')
         script(src='/socket/socket.io.js',type='text/javascript')
-        script(src='/script/fetch.js?v=#{v}',,type='text/javascript')
-        script(src='/script/socket.js?v=#{v}',,type='text/javascript')
-        script(src='/script/editor.js?v=#{v}',,type='text/javascript')
+        script(src='/script/fetch.js?v=#{v}',type='text/javascript')
+        script(src='/script/socket.js?v=#{v}',type='text/javascript')
+        script(src='/script/editor.js?v=#{v}',type='text/javascript')
+        script(src='/bpopup/jquery.bpopup.min.js',type='text/javascript')
+        script(src='/script/jquery.easing.min.js',type='text/javascript')
         script(type='text/javascript').
             var G = {};
             G.socket = null;
@@ -18,20 +20,29 @@ html
                 G.socket = new Socket();
             });
     body
+        div#createDlg.Hidden
+            div#dlgContainer
+                div.dlgTop
+                    span.vtLine
+                    span 创建一个会议
+                div.dlgBody
+                    ul
         div#container
             div#TopBar
                 div#logo
                     p 返回明道
                 div#TopMenu
-                    div#createBtn
+                    a#createBtn
                         span 创建
             div#Core
                 div#LeftMenu.rh.Absolute
                     ul#Menus
                         li
+                            div.menuItem 我的会议
+                        li
                             div.menuItem 我的草稿
                         li
-                            div.menuItem 我的会议
+                            div.menuItem 我的模板
                 fieldset#LeftEditor.rh.Absolute
                     div#SharedTop
 

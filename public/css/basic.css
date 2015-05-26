@@ -12,3 +12,6 @@ fieldset{
 .Absolute{
     position: absolute;
 }
+.Hidden{
+    display: none;
+}

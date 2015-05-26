@@ -1,10 +1,17 @@
-
 var Socket = function () {
-    var socket = io.connect(location.origin,{
-        path:'/socket'
+    var _this = this;
+    var socket = io.connect(location.origin, {
+        path: '/socket'
     });
+    this.InitNote = function (calendarId, callback) {
+        socket.emit('init note', {
+            cid:calendarId
+        }, function (isSuccess) {
+            callback(isSuccess);
+        });
+    };
+
     socket.on('msg', function (data) {
 
     });
-    return socket;
 };

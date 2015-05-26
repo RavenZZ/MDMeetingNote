@@ -118,7 +118,16 @@ function GetJoinedCalendar(token, date, callback) {
             var result = null;
             try {
                 result = JSON.parse(body);
-                callback(null, result);
+                var cals = [];
+                result.calendars.forEach(function (obj) {
+                    if(!obj.isTask){
+                        cals.push({
+                            id:obj.id,
+                            title:obj.title
+                        });
+                    }
+                });
+                callback(null, cals);
             } catch (e) {
                 callback(new Error('Get joined calendars parse Error'), body);
             }

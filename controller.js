@@ -3,7 +3,7 @@ var config = require('./configuration');
 var mdapi = require('./mdapi');
 var ApiLoginUrl = mdapi.ApiLoginUrl;
 var async = require('async');
-
+require('date-util');
 
 /*
  * if there is no session redirect to login
@@ -132,7 +132,7 @@ function GetJoinedTasks(req, res) {
 
 function GetJoinedCalendar(req, res) {
     var reqBody = req.body;
-    var date = reqBody.date;
+    var date = reqBody.date?reqBody.date :new Date().format('yyyy-MM-dd');
     var token = req.session.token;
 
     mdapi.GetJoinedCalendar(token, date, function (getCalendarError, calendars) {
